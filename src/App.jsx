@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import HomePage from './pages/HomePage'
+import BankCardPayment from './pages/BankCardPayment'
+
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
     createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage/>} />
+        <Route path="/payment" element={<BankCardPayment />} />
     </Route>
     )
   )

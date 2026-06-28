@@ -10,13 +10,13 @@ const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 font-bold text-xl text-gray-900 tracking-tight">
               <span className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-sm font-black">J</span>
-              JobBoard
+              HooksBoard
             </Link>
   
             {/* Links */}
             <div className="hidden md:flex items-center gap-1">
               {[
-                { label: "Jobs", href: "/jobs" },
+                { label: "Projects", href: "/payment" },
                 { label: "Companies", href: "/companies" },
                 { label: "About", href: "/about" },
               ].map((item) => (
