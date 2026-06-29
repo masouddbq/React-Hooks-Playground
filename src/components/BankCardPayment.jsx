@@ -35,13 +35,15 @@ const BankCardPayment = () => {
 
         .payment-page {
           min-height: 100vh;
-          background: #e8f0fe;
+          background: #f1f1de;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 2rem 1rem;
+          padding: 1rem 1rem;
           font-family: 'Segoe UI', Arial, sans-serif;
           direction : ltr;
+          margin : 10px;
+          border-radius: 20px;
         }
 
         .payment-wrapper {

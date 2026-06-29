@@ -6,28 +6,24 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import HomePage from './pages/HomePage'
-import BankCardPayment from './pages/BankCardPayment'
-
-
+import HomePage from "./pages/HomePage";
+import Payment from "./pages/Payment";
+import Projects from "./pages/Projects";
 
 function App() {
   const name = "Masoud";
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-    <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage/>} />
-        <Route path="/payment" element={<BankCardPayment />} />
-    </Route>
-    )
-  )
-
-
-  return (
-    <RouterProvider router={router}></RouterProvider>
-    
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/projects" element={<Projects />}/>
+        <Route path="projects/payment" element={<Payment />} />
+      </Route>,
+    ),
   );
+
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;

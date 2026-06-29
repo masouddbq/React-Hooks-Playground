@@ -16,7 +16,7 @@ const Navbar = () => {
             {/* Links */}
             <div className="hidden md:flex items-center gap-1">
               {[
-                { label: "Projects", href: "/payment" },
+                { label: "Projects", href: "/projects" },
                 { label: "Companies", href: "/companies" },
                 { label: "About", href: "/about" },
               ].map((item) => (
