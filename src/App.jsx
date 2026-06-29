@@ -10,6 +10,8 @@ import HomePage from "./pages/HomePage";
 import Payment from "./pages/Payment";
 import Projects from "./pages/Projects";
 import Hooks from "./pages/Hooks";
+import Materials from "./pages/Materials";
+import CleanUp from './components/CleanUp'
 
 function App() {
   const name = "Masoud";
@@ -21,7 +23,8 @@ function App() {
         <Route path="/projects" element={<Projects />}/>
         <Route path="/projects/payment" element={<Payment />} />
         <Route path="/about" element={<Hooks />} />
-
+        <Route path="/materials" element={<Materials />} />
+        <Route path="/materials/cleanup" element={<CleanUp />} />
       </Route>,
     ),
   );

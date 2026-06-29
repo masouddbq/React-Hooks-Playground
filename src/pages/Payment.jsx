@@ -5,7 +5,7 @@ import BankCardPayment from '../components/BankCardPayment'
 const Payment = ({text}) => {
 
   return (
-    <ProjectLayout text={'شش رقم اول کارت بانکی, مبدا بانک شما رو مشخص میکنه'} className="">
+    <ProjectLayout text={'The first six digits of your bank card identify your bank of origin.'} className="">
         <BankCardPayment />
     </ProjectLayout>
   )
