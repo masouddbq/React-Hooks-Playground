@@ -2,6 +2,7 @@ import React from 'react'
 import Counter from '../components/Counter'
 import FetchApi from '../components/FetchApi'
 import UseEffectFetch from '../components/UseEffectFetch'
+import RouteParams from '../components/RouteParams'
 
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
         <Counter />
         <FetchApi />
         <UseEffectFetch />
+        <RouteParams />
     </div>
   )
 }

@@ -8,9 +8,12 @@ const Projects = () => {
   return (
     <div className="flex justify-center">
 
-    <div className="flex-col justify-center text-center mt-2 gap-2 shadow-md w-auto">
+    <div className="flex justify-center text-center mt-2 gap-2 shadow-md w-auto">
       <Link to="/projects/payment">
         <Button>Bank Card Payment</Button>
+      </Link>
+      <Link to="/projects/RouteParams">
+        <Button>useParams v.s useLocation</Button>
       </Link>
     </div>
     </div>
