@@ -11,10 +11,10 @@ const Navbar = () => {
   
             {/* Logo */}
             <Link to="/" className="flex w-50 items-center gap-2 font-bold text-xl text-gray-900 tracking-tight">
-              <span className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-sm font-black">J</span>
+              <span className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-sm font-black">#</span>
               HooksBoard
+              <p className="text-xs shadow-sm shadow-indigo-300 rounded-lg p-1 font-bold text-indigo-500">{location.pathname}</p>
             </Link>
-              <p className="absolute text-md shadow-sm shadow-indigo-300 rounded-lg p-1 font-bold left-[21%] text-indigo-500">{location.pathname}</p>
 
   
             {/* Links */}

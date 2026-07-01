@@ -10,6 +10,7 @@ import RouteParams from './components/RouteParams';
 import Counter from './components/Counter';
 import FetchApi from './components/FetchApi';
 import UseEffectFetch from './components/UseEffectFetch';
+import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
             {
                 path : '/materials/cleanup' ,
                 element : <CleanUp />
+            },
+            {
+                path :'*',
+                element : <NotFound />,
+                handle : { hideNav : true }
             },
             
         ]
