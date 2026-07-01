@@ -38,6 +38,8 @@ const UseEffectFetch = () => {
 
   return (
     <>
+    <div className="flex justify-center">
+
       <div className="flex flex-col gap-4 p-6 bg-white rounded-2xl shadow-2xl w-72">
         {/* status */}
         <div className="flex items-center justify-between">
@@ -64,7 +66,7 @@ const UseEffectFetch = () => {
             </div>
           ) : error ? (
             <span className="text-red-400">{error}</span>
-        ) : data.length === 0 ? (
+          ) : data.length === 0 ? (
             <span className="text-gray-400">Nope yet...</span>
           ) : (
             data.slice(0,1).map((job) => (
@@ -77,6 +79,7 @@ const UseEffectFetch = () => {
           )}
         </div>
       </div>
+          </div>
     </>
   );
 };

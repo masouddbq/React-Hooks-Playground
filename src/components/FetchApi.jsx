@@ -36,6 +36,8 @@ const FetchApi = () => {
 
   return (
     <>
+    <div className="flex justify-center">
+
       <div className="flex flex-col gap-4 p-6 bg-white rounded-2xl shadow-2xl w-72">
         {/* status */}
         <div className="flex items-center justify-between">
@@ -92,6 +94,8 @@ const FetchApi = () => {
           Reset
         </button>
       </div>
+    </div>
+
     </>
   );
 };

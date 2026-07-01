@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 const RouteParams = () => {
@@ -6,11 +6,12 @@ const RouteParams = () => {
   const [idStatus, setIdStatus] = useState(false);
   const { id } = useParams();
   const location = useLocation();
-
+  
   const getPath = () => {
     setUrlStatus((prev) => !prev);
     setIdStatus((prev) => !prev);
   };
+
   return (
     <div className="flex justify-center">
       <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-2xl">

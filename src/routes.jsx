@@ -7,6 +7,9 @@ import Hooks from './pages/Hooks';
 import Materials from './pages/Materials';
 import CleanUp from './components/CleanUp';
 import RouteParams from './components/RouteParams';
+import Counter from './components/Counter';
+import FetchApi from './components/FetchApi';
+import UseEffectFetch from './components/UseEffectFetch';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +29,22 @@ const router = createBrowserRouter([
                 element : <Payment />
             },
             {
+                path : '/projects/counter',
+                element : <Counter />
+            },
+            {
+                path : '/projects/fetchApi',
+                element : <FetchApi />
+            },
+            {
+                path : '/projects/uEffectFetch',
+                element : <UseEffectFetch />
+            },
+            {
+                path : '/projects/RouteParams/:id?',
+                element : <RouteParams />
+            },
+            {
                 path : '/about' ,
                 element : <Hooks />
             },
@@ -37,10 +56,7 @@ const router = createBrowserRouter([
                 path : '/materials/cleanup' ,
                 element : <CleanUp />
             },
-            {
-                path : '/projects/RouteParams/:id?',
-                element : <RouteParams />
-            }
+            
         ]
     },
 ])

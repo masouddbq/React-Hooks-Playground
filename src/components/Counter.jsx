@@ -14,6 +14,8 @@ const Counter = () => {
 
   return (
     <>
+    <div className="flex justify-center">
+
       <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-2xl w-64">
         {/* نمایش دما */}
         <div className="flex flex-col items-center gap-1">
@@ -44,6 +46,8 @@ const Counter = () => {
           </button>
         </div>
       </div>
+    </div>
+
     </>
   );
 };

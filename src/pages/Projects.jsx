@@ -1,21 +1,27 @@
 import React from "react";
-import { Link , useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const Projects = () => {
-    const location = useLocation()
+
+  const projects = [
+    { title: "Bank Card Payment", href: "/projects/payment" },
+    { title: "useParams v.s useLocation", href: "/projects/RouteParams" },
+    { title: "Counter", href: "/projects/counter" },
+    { title: "FetchApi", href: "/projects/fetchApi" },
+    { title: "useEffectFetch", href: "/projects/uEffectFetch" },
+  ];
 
   return (
     <div className="flex justify-center">
+      <div className="grid grid-cols-2 justify-center p-2 h-[200px] text-center mt-2 gap-2 w-auto">
+        {projects.map((item) => (
 
-    <div className="flex justify-center text-center mt-2 gap-2 shadow-md w-auto">
-      <Link to="/projects/payment">
-        <Button>Bank Card Payment</Button>
-      </Link>
-      <Link to="/projects/RouteParams">
-        <Button>useParams v.s useLocation</Button>
-      </Link>
-    </div>
+          <Link to={item.href}>
+            <Button>{item.title}</Button>
+          </Link>
+      ))}
+      </div>
     </div>
   );
 };
