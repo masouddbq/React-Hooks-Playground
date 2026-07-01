@@ -11,6 +11,7 @@ import Counter from './components/Counter';
 import FetchApi from './components/FetchApi';
 import UseEffectFetch from './components/UseEffectFetch';
 import NotFound from './pages/NotFound';
+import PrivateRoute from './pages/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -51,11 +52,21 @@ const router = createBrowserRouter([
             },
             {
                 path : '/materials' ,
-                element : <Materials />
-            },
-            {
-                path : '/materials/cleanup' ,
-                element : <CleanUp />
+                children : [
+
+                    {
+                        index :true,
+                        element : <Materials />
+                    },
+                    {
+                        path : '/materials/cleanup' ,
+                        element : <CleanUp />
+                    },
+                    {
+                        path : '/materials/privateRoute' ,
+                        element : <PrivateRoute />
+                    },
+                ]
             },
             {
                 path :'*',
