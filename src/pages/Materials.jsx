@@ -6,6 +6,7 @@ const Materials = () => {
   const materials = [
     {title : 'Clean-up' , href : '/materials/cleanup'},
     {title : 'PrivateRoute' , href : '/materials/privateRoute'},
+    {title : 'ScrollRestoration' , href : '/materials/ScrollRestore'},
   ]
 
   return (

@@ -11,7 +11,7 @@ const Counter = () => {
         // e.preventDefault()
         setTemp(temp - 1)
     }
-    const handleIncrease = (e) => {
+    const handleIncrease = (e) => { 
         // e.preventDefault()
         setTemp(temp + 1)
     }    

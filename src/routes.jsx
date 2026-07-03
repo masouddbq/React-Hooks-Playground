@@ -12,6 +12,7 @@ import FetchApi from './components/FetchApi';
 import UseEffectFetch from './components/UseEffectFetch';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './pages/PrivateRoute';
+import ScrollRestore from './pages/ScrollRestore';
 
 const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
                         path : '/materials/privateRoute' ,
                         element : <PrivateRoute />
                     },
+                    {
+                        path : '/materials/scrollRestore' ,
+                        element : <ScrollRestore />
+                    }
                 ]
             },
             {
