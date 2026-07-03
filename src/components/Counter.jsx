@@ -1,7 +1,11 @@
 import React , { useEffect, useState } from "react";
+import { useSearchParams } from 'react-router-dom';
 
 const Counter = () => {
+    const [params , setParams] = useSearchParams()
     const [temp , setTemp] = useState(0)
+    const [product , setProduct] = useState(['sss'])
+    
 
     const handleDecrease = (e) => {
         // e.preventDefault()
@@ -11,6 +15,16 @@ const Counter = () => {
         // e.preventDefault()
         setTemp(temp + 1)
     }    
+
+    
+    
+    useEffect(() => {
+      setParams({
+        search : 'car'
+      })
+      const search = params.get('search')
+      // const filterProds = product.filter(prod => prod.title.includes(search))
+    }, []);
 
   return (
     <>
@@ -46,6 +60,7 @@ const Counter = () => {
           </button>
         </div>
       </div>
+      <div>{product}</div>
     </div>
 
     </>
