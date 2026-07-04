@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect } from 'react'
 
-const useCounter = (value) => {
+const useCounter = (value = Number(localStorage.getItem('number'))) => {
     const [count , setCount] = useState(value)
 
         
@@ -10,6 +10,10 @@ const useCounter = (value) => {
         const decrease = () => {
             setCount(count - 1)
         }
+        
+        useEffect(() => {
+            localStorage.setItem('number' , count)
+        }, [count]);
 
         return {count , increase , decrease}
 }

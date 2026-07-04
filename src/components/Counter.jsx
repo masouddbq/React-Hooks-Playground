@@ -7,7 +7,7 @@ const Counter = () => {
   const [params , setParams] = useSearchParams()
   // const [temp , setTemp] = useState(0)
   const [product , setProduct] = useState(['sss'])    
-  const {count , increase , decrease} = useCounter(0)
+  const {count , increase , decrease} = useCounter()
 
     
     
