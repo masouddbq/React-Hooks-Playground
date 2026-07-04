@@ -1,20 +1,13 @@
 import React , { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
+import useCounter from "../hooks/useCounter";
+
 
 const Counter = () => {
-    const [params , setParams] = useSearchParams()
-    const [temp , setTemp] = useState(0)
-    const [product , setProduct] = useState(['sss'])
-    
-
-    const handleDecrease = (e) => {
-        // e.preventDefault()
-        setTemp(temp - 1)
-    }
-    const handleIncrease = (e) => { 
-        // e.preventDefault()
-        setTemp(temp + 1)
-    }    
+  const [params , setParams] = useSearchParams()
+  // const [temp , setTemp] = useState(0)
+  const [product , setProduct] = useState(['sss'])    
+  const {count , increase , decrease} = useCounter(0)
 
     
     
@@ -34,7 +27,7 @@ const Counter = () => {
         {/* نمایش دما */}
         <div className="flex flex-col items-center gap-1">
           <span className="text-7xl font-bold text-gray-800 tabular-nums">
-            {temp}°
+            {count}°
           </span>
           <span className="text-sm font-medium text-gray-400 tracking-widest uppercase">
             Celsius
@@ -45,7 +38,7 @@ const Counter = () => {
         <div className="flex items-center gap-4">
           {/* Decrease */}
           <button
-            onClick={handleDecrease}
+            onClick={decrease}
             className="w-14 h-14 rounded-2xl bg-blue-50 hover:bg-blue-100 active:scale-95 text-blue-500 text-2xl font-bold transition-all duration-150 flex items-center justify-center"
           >
             −
@@ -53,7 +46,7 @@ const Counter = () => {
 
           {/* Increase */}
           <button
-            onClick={handleIncrease}
+            onClick={increase}
             className="w-14 h-14 rounded-2xl bg-orange-50 hover:bg-orange-100 active:scale-95 text-orange-500 text-2xl font-bold transition-all duration-150 flex items-center justify-center"
           >
             +
