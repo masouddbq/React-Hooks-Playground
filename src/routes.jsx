@@ -49,7 +49,7 @@ const router = createBrowserRouter([
                 element : <RouteParams />
             },
             {
-                path : '/projects/Form',
+                path : '/projects/form',
                 element : <FormUseReducer />
             },
             {

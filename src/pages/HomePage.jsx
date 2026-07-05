@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/auth";
 
 const HomePage = () => {
+  const auth = useContext(AuthContext)
+
+  console.log(auth);
+  
+
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-6 py-8 font-sans">
       <div className="max-w-xl text-center">

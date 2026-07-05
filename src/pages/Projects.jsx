@@ -10,6 +10,7 @@ const Projects = () => {
     { title: "Counter", href: "/projects/counter" },
     { title: "FetchApi", href: "/projects/fetchApi" },
     { title: "useEffectFetch", href: "/projects/uEffectFetch" },
+    { title: "Form(UseReducer)", href: "/projects/form" },
   ];
 
   return (
