@@ -13,6 +13,7 @@ import UseEffectFetch from './components/UseEffectFetch';
 import NotFound from './pages/NotFound';
 import PrivateRoute from './pages/PrivateRoute';
 import ScrollRestore from './pages/ScrollRestore';
+import FormUseReducer from './pages/FormUseReducer'
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path : '/projects/RouteParams/:id?',
                 element : <RouteParams />
+            },
+            {
+                path : '/projects/Form',
+                element : <FormUseReducer />
             },
             {
                 path : '/about' ,
