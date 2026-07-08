@@ -1,8 +1,10 @@
-import React from 'react'
+import React , { Activity, useState } from 'react'
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const Materials = () => {
+
+  const [isLoading, setIsLoading] = useState(false);
   const materials = [
     {title : 'Clean-up' , href : '/materials/cleanup'},
     {title : 'PrivateRoute' , href : '/materials/privateRoute'},
@@ -16,6 +18,9 @@ const Materials = () => {
           <Button>{item.title}</Button>
         </Link>
         ))}
+        <Activity mode={isLoading ? 'visible' : 'hidden'}>
+          Loading...
+        </Activity>
     </div>
   )
 }
