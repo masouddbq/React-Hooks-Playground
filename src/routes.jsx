@@ -1,96 +1,65 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+
+// const MainLayout = lazy(() => import('./layout/MainLayout'));
+// const HomePage = lazy(() => import('./pages/HomePage'));
+
 import MainLayout from './layout/MainLayout';
 import HomePage from './pages/HomePage';
-import Projects from './pages/Projects';
-import Payment from './pages/Payment';
-import Hooks from './pages/Hooks';
-import Materials from './pages/Materials';
-import CleanUp from './components/CleanUp';
-import RouteParams from './components/RouteParams';
-import Counter from './components/Counter';
-import FetchApi from './components/FetchApi';
-import UseEffectFetch from './components/UseEffectFetch';
-import NotFound from './pages/NotFound';
-import PrivateRoute from './pages/PrivateRoute';
-import ScrollRestore from './pages/ScrollRestore';
-import FormUseReducer from './pages/FormUseReducer'
-import  Activity  from './pages/Activity';
+
+const Projects = lazy(() => import('./pages/Projects'));
+const Payment = lazy(() => import('./pages/Payment'));
+const Hooks = lazy(() => import('./pages/Hooks'));
+const Materials = lazy(() => import('./pages/Materials'));
+const CleanUp = lazy(() => import('./components/CleanUp'));
+const RouteParams = lazy(() => import('./components/RouteParams'));
+const Counter = lazy(() => import('./components/Counter'));
+const FetchApi = lazy(() => import('./components/FetchApi'));
+const UseEffectFetch = lazy(() => import('./components/UseEffectFetch'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const PrivateRoute = lazy(() => import('./pages/PrivateRoute'));
+const ScrollRestore = lazy(() => import('./pages/ScrollRestore'));
+const FormUseReducer = lazy(() => import('./pages/FormUseReducer'));
+const Activity = lazy(() => import('./pages/Activity'));
+
+// یک هلپر برای اینکه هر لیزی‌کامپوننت با یک الگوی یکسان Suspense بگیره
+const withSuspense = (Component) => (
+    <Suspense fallback={<div>Loading...</div>}>
+        <Component />
+    </Suspense>
+);
 
 const router = createBrowserRouter([
     {
-        path : '/' ,
-        element : <MainLayout />,
-        children : [
+        path: '/',
+        element: <MainLayout />,
+        children: [
+            { index: true, element: withSuspense(HomePage) },
+            { path: '/projects', element: withSuspense(Projects) },
+            { path: '/projects/payment', element: withSuspense(Payment) },
+            { path: '/projects/counter', element: withSuspense(Counter) },
+            { path: '/projects/fetchApi', element: withSuspense(FetchApi) },
+            { path: '/projects/uEffectFetch', element: withSuspense(UseEffectFetch) },
+            { path: '/projects/RouteParams/:id?', element: withSuspense(RouteParams) },
+            { path: '/projects/form', element: withSuspense(FormUseReducer) },
+            { path: '/about', element: withSuspense(Hooks) },
             {
-                index :true,
-                element : <HomePage />
+                path: '/materials',
+                children: [
+                    { index: true, element: withSuspense(Materials) },
+                    { path: 'cleanup', element: withSuspense(CleanUp) },
+                    { path: 'privateRoute', element: withSuspense(PrivateRoute) },
+                    { path: 'scrollRestore', element: withSuspense(ScrollRestore) },
+                    { path: 'Activity', element: withSuspense(Activity) },
+                ],
             },
             {
-                path : '/projects',
-                element :<Projects />
+                path: '*',
+                element: withSuspense(NotFound),
+                handle: { hideNav: true },
             },
-            {
-                path : '/projects/payment',
-                element : <Payment />
-            },
-            {
-                path : '/projects/counter',
-                element : <Counter />
-            },
-            {
-                path : '/projects/fetchApi',
-                element : <FetchApi />
-            },
-            {
-                path : '/projects/uEffectFetch',
-                element : <UseEffectFetch />
-            },
-            {
-                path : '/projects/RouteParams/:id?',
-                element : <RouteParams />
-            },
-            {
-                path : '/projects/form',
-                element : <FormUseReducer />
-            },
-            {
-                path : '/about' ,
-                element : <Hooks />
-            },
-            {
-                path : '/materials' ,
-                children : [
-
-                    {
-                        index :true,
-                        element : <Materials />
-                    },
-                    {
-                        path : '/materials/cleanup' ,
-                        element : <CleanUp />
-                    },
-                    {
-                        path : '/materials/privateRoute' ,
-                        element : <PrivateRoute />
-                    },
-                    {
-                        path : '/materials/scrollRestore' ,
-                        element : <ScrollRestore />
-                    },
-                    {
-                        path : '/materials/Activity' ,
-                        element : <Activity />
-                    },
-                ]
-            },
-            {
-                path :'*',
-                element : <NotFound />,
-                handle : { hideNav : true }
-            },
-            
-        ]
+        ],
     },
-])
+]);
 
 export default router;
