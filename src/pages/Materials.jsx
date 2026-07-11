@@ -14,7 +14,7 @@ const Materials = () => {
 
   return (
     <div className='flex justify-center w-full'>
-    <div className="grid grid-cols-3 text-center mt-2 p-10 gap-2">
+    <div className="grid grid-cols-2 md:grid-cols-3 text-center mt-2 p-10 gap-2">
         {materials.map((item) => (
           <Link to={item.href}>
           <Button>{item.title}</Button>
