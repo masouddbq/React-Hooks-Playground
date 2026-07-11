@@ -15,7 +15,7 @@ const Projects = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-2 justify-center p-2 h-[200px] text-center mt-2 gap-2 w-auto">
+      <div className="grid grid-cols-3 justify-center p-10  text-center mt-2 gap-1 w-auto">
         {projects.map((item) => (
 
           <Link to={item.href}>

@@ -9,10 +9,12 @@ const Materials = () => {
     {title : 'Clean-up' , href : '/materials/cleanup'},
     {title : 'PrivateRoute' , href : '/materials/privateRoute'},
     {title : 'ScrollRestoration' , href : '/materials/ScrollRestore'},
+    {title : 'Activity' , href : '/materials/Activity'},
   ]
 
   return (
-    <div className="flex justify-center text-center mt-2 gap-2 shadow-md h-[86vh] w-auto">
+    <div className='flex justify-center w-full'>
+    <div className="grid grid-cols-3 text-center mt-2 p-10 gap-2">
         {materials.map((item) => (
           <Link to={item.href}>
           <Button>{item.title}</Button>
@@ -21,6 +23,7 @@ const Materials = () => {
         <Activity mode={isLoading ? 'visible' : 'hidden'}>
           Loading...
         </Activity>
+    </div>
     </div>
   )
 }

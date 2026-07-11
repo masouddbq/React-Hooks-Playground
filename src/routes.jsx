@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound';
 import PrivateRoute from './pages/PrivateRoute';
 import ScrollRestore from './pages/ScrollRestore';
 import FormUseReducer from './pages/FormUseReducer'
+import  Activity  from './pages/Activity';
 
 const router = createBrowserRouter([
     {
@@ -75,7 +76,11 @@ const router = createBrowserRouter([
                     {
                         path : '/materials/scrollRestore' ,
                         element : <ScrollRestore />
-                    }
+                    },
+                    {
+                        path : '/materials/Activity' ,
+                        element : <Activity />
+                    },
                 ]
             },
             {
