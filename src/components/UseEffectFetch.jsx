@@ -6,35 +6,33 @@ const UseEffectFetch = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-      const fetchData = async () => {
-          setIsLoading(true)
-          setError(null)
-    
-          try {
-              const res = await fetch('http://localhost:8000/jobs')
-              const data = await res.json();
-              setData(data)
-              console.log(data);
-          } catch (error) {
-              setError(error.message)
-          }finally {
-              setIsLoading(false)
-          }
-    
-          
-          return data;
-    
-      }
-    
-      fetchData();
-      
-  }, []);
+    const controller = new AbortController();
 
-  
+    const fetchData = async () => {
+        setIsLoading(true);
+        setError(null);
 
-  const handleReset = () => {
-    setData([])
-  }
+        try {
+            const res = await fetch('http://localhost:8000/jobs', {
+                signal: controller.signal
+            });
+            if (!res.ok) throw new Error(`خطای سرور: ${res.status}`);
+            const result = await res.json();
+            setData(result);
+        } catch (err) {
+            if (err.name !== 'AbortError') {
+                setError(err.message);
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    fetchData();
+
+    return () => controller.abort();
+}, []);
+
 
   return (
     <>
@@ -69,7 +67,7 @@ const UseEffectFetch = () => {
           ) : data.length === 0 ? (
             <span className="text-gray-400">Nope yet...</span>
           ) : (
-            data.slice(0,1).map((job) => (
+            data.splice(0,1).map((job) => (
               <div key={job.id}>
                 <h3>{job.title}</h3>
                 <p>{job.location}</p>

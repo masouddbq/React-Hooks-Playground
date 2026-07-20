@@ -20,7 +20,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const PrivateRoute = lazy(() => import('./pages/PrivateRoute'));
 const ScrollRestore = lazy(() => import('./pages/ScrollRestore'));
 const FormUseReducer = lazy(() => import('./pages/FormUseReducer'));
-const Activity = lazy(() => import('./pages/Activity'));
+const Activity = lazy(() => import('./pages/ActivityDemo'));
 
 // یک هلپر برای اینکه هر لیزی‌کامپوننت با یک الگوی یکسان Suspense بگیره
 const withSuspense = (Component) => (

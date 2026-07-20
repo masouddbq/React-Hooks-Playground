@@ -1,31 +1,52 @@
-import React , { Activity, useState } from 'react'
-import { Link } from "react-router-dom";
+import React, { Activity, useState, lazy, Suspense } from "react";
 import Button from "../components/Button";
 
-const Materials = () => {
+// هر کامپوننت به‌صورت lazy لود میشه تا فقط وقتی نیاز شد ایمپورت بشه
+const Cleanup = lazy(() => import("../components/CleanUp"));
+const PrivateRoute = lazy(() => import("./PrivateRoute"));
+const ScrollRestore = lazy(() => import("./ScrollRestore"));
+const ActivityDemo = lazy(() => import("./ActivityDemo"));
 
-  const [isLoading, setIsLoading] = useState(false);
+const Materials = () => {
+  const [activeKey, setActiveKey] = useState(null); // کلید گزینه‌ی انتخاب‌شده
+
   const materials = [
-    {title : 'Clean-up' , href : '/materials/cleanup'},
-    {title : 'PrivateRoute' , href : '/materials/privateRoute'},
-    {title : 'ScrollRestoration' , href : '/materials/ScrollRestore'},
-    {title : 'Activity' , href : '/materials/Activity'},
-  ]
+    { key: "cleanup", title: "Clean-up", Component: Cleanup },
+    { key: "privateRoute", title: "PrivateRoute", Component: PrivateRoute },
+    { key: "scrollRestore", title: "ScrollRestoration", Component: ScrollRestore },
+    { key: "activity", title: "Activity", Component: ActivityDemo },
+  ];
 
   return (
-    <div className='flex justify-center w-full'>
-    <div className="grid grid-cols-2 md:grid-cols-3 text-center mt-2 p-10 gap-2">
+    <div className="flex items-center justify-around w-full">
+      {/* لیست دکمه‌ها */}
+      <div className="fixed left-0 top-12 border-r-2 grid grid-cols-1 md:grid-cols-1 md:left-4 text-center mt-2 p-4 gap-2">
         {materials.map((item) => (
-          <Link to={item.href}>
-          <Button>{item.title}</Button>
-        </Link>
+          <Button key={item.key} onClick={() => setActiveKey(item.key)}>
+            {item.title}
+          </Button>
         ))}
-        <Activity mode={isLoading ? 'visible' : 'hidden'}>
-          Loading...
-        </Activity>
-    </div>
-    </div>
-  )
-}
+      </div>
 
-export default Materials
+      {/* محتوای نمایشی کنار لیست */}
+      <div className="flex justify-center items-center absolute top-12 right-10 w-[50vw] md:right-auto">
+        {materials.map((item) => (
+          <Activity
+            key={item.key}
+            mode={activeKey === item.key ? "visible" : "hidden"}
+          >
+            <Suspense fallback={<div>Loading...</div>}>
+              <item.Component />
+            </Suspense>
+          </Activity>
+        ))}
+
+        {!activeKey && (
+          <p className="text-gray-400">یک گزینه را انتخاب کنید</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Materials;

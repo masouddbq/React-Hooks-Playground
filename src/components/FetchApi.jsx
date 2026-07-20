@@ -23,7 +23,6 @@ const FetchApi = () => {
         }
 
         
-        return data;
 
     }
 
@@ -67,7 +66,7 @@ const FetchApi = () => {
         ) : data.length === 0 ? (
             <span className="text-gray-400">Nope yet...</span>
           ) : (
-            data.slice(5,6).map((job) => (
+            data.splice(0,4).map((job) => (
               <div key={job.id}>
                 <h3>{job.title}</h3>
                 <p>{job.location}</p>
