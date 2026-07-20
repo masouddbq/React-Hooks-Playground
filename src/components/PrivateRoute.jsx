@@ -44,7 +44,7 @@ export default function PrivateRouteExplainer() {
         }
 
         .pr-h1 {
-          font-size: 2.1rem;
+          font-size: 1.5rem;
           font-weight: 800;
           line-height: 1.35;
           color: darkblue;

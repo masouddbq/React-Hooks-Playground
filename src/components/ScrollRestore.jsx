@@ -4,7 +4,7 @@ const ScrollRestore = () => {
   return (
     <div>
           <div className="flex justify-center">
-      <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-2xl w-80">
+      <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-3xl w-80">
         {/* آیکون/عنوان */}
         <div className="flex flex-col items-center gap-1">
           <span className="text-5xl">📜</span>

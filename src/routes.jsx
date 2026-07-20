@@ -8,7 +8,7 @@ import MainLayout from './layout/MainLayout';
 import HomePage from './pages/HomePage';
 
 const Projects = lazy(() => import('./pages/Projects'));
-const Payment = lazy(() => import('./pages/Payment'));
+const Payment = lazy(() => import('./components/Payment'));
 const Hooks = lazy(() => import('./pages/Hooks'));
 const Materials = lazy(() => import('./pages/Materials'));
 const CleanUp = lazy(() => import('./components/CleanUp'));
@@ -17,10 +17,10 @@ const Counter = lazy(() => import('./components/Counter'));
 const FetchApi = lazy(() => import('./components/FetchApi'));
 const UseEffectFetch = lazy(() => import('./components/UseEffectFetch'));
 const NotFound = lazy(() => import('./pages/NotFound'));
-const PrivateRoute = lazy(() => import('./pages/PrivateRoute'));
-const ScrollRestore = lazy(() => import('./pages/ScrollRestore'));
-const FormUseReducer = lazy(() => import('./pages/FormUseReducer'));
-const Activity = lazy(() => import('./pages/ActivityDemo'));
+const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
+const ScrollRestore = lazy(() => import('./components/ScrollRestore'));
+const FormUseReducer = lazy(() => import('./components/FormUseReducer'));
+const Activity = lazy(() => import('./components/ActivityDemo'));
 
 // یک هلپر برای اینکه هر لیزی‌کامپوننت با یک الگوی یکسان Suspense بگیره
 const withSuspense = (Component) => (

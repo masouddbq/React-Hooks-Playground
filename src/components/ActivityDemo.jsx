@@ -12,8 +12,8 @@ const Activity = () => {
         React 19.2 · Visibility Primitive
       </div>
 
-      <h1 className="text-3xl font-extrabold leading-snug text-blue-950 mb-3">
-        <span className="text-gray-500">Activity</span> چطور یک بخش از UI رو مخفی می‌کنه بدون اینکه state از بین بره؟
+      <h1 className="text-2xl font-extrabold leading-snug text-blue-950 mb-3">
+        <span className="text-gray-500 block mb-4">Activity</span> چطور یک بخش از UI رو مخفی می‌کنه بدون اینکه state از بین بره؟
       </h1>
 
       <p className="text-base leading-8 text-black mb-10 max-w-xl">

@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectLayout from '../layout/ProjectLayout'
-import BankCardPayment from '../components/BankCardPayment'
+import BankCardPayment from './BankCardPayment'
 
 const Payment = ({text}) => {
 
