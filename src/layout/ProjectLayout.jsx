@@ -11,8 +11,8 @@ const ProjectLayout = ({ children , text }) => {
       };
 
   return (
-    <div className="flex justify-around items-center">
-      <div className="flex-col items-center justify-center">
+    <div className="flex-col md:grid md:grid-cols-2 justify-around items-center">
+      <div className="flex-col text-xs md:text-lg mx-10 items-center justify-center">
         <button
           onClick={handleBack}
           className="flex gap-x-10 items-center text-indigo-700 p-2 rounded-lg"

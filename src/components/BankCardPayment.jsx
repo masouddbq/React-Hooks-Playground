@@ -51,7 +51,7 @@ const BankCardPayment = () => {
           border-radius: 20px;
           box-shadow: 0 8px 40px rgba(66, 103, 212, 0.13);
           width: 100%;
-          max-width: 420px;
+          max-width: 620px;
           overflow: hidden;
           padding-bottom: 1.5rem;
         }
