@@ -60,6 +60,7 @@ export default function FetchCleanup() {
           margin: 0 auto;
           padding: 2rem 1.5rem;
           color: #1e293b;
+          direction : rtl;
         }
 
         .fc-badge {
@@ -312,7 +313,7 @@ export default function FetchCleanup() {
           useEffect + AbortController
         </div>
 
-        <h2 className="fc-title">Fetch Cleanup</h2>
+        <h2 className="fc-title">پاک‌سازی عملیات دریافت (Fetch)</h2>
         <p className="fc-subtitle">
           Every time the post ID changes or the component unmounts,
           the previous fetch is automatically aborted via <code>AbortController</code>.

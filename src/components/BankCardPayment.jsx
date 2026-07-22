@@ -332,20 +332,20 @@ const BankCardPayment = () => {
             ) : null}
         </div>
 
-        <div className="card-field-label">Card Number:</div>
+        <div className="card-field-label">شماره کارت</div>
         <div className="card-field-box" >{cardNum}</div>
 
         <div className="card-row">
           <div className="card-col">
-            <div className="card-field-label">Exp. Year:</div>
+            <div className="card-field-label">سال انقضا</div>
             <div className="card-field-box-small">{year}</div>
           </div>
           <div className="card-col">
-            <div className="card-field-label">Exp. Month:</div>
+            <div className="card-field-label">ماه انقضا</div>
             <div className="card-field-box-small">{month}</div>
           </div>
           <div className="card-col-wide">
-            <div className="card-field-label">CVV2:</div>
+            <div className="card-field-label">CVV2</div>
             <div className="card-field-box-small">{cvv2}</div>
           </div>
         </div>
@@ -355,7 +355,7 @@ const BankCardPayment = () => {
       <div className="form-section">
 
         <div className="form-group">
-          <label className="form-label">Card Number:</label>
+          <label className="form-label">شماره کارت را وارد کنید</label>
           <input
             className="form-input"
             type="text"
@@ -370,7 +370,7 @@ const BankCardPayment = () => {
         </div>
 
         <div className="form-group">
-          <label className="form-label">CVV2:</label>
+          <label className="form-label">CVV2 را وارد کنید</label>
           <input
             className="form-input"
             type="password"
@@ -383,7 +383,7 @@ const BankCardPayment = () => {
 
         <div className="form-row">
           <div className="form-group" style={{ marginBottom: 0 }}>
-            <label className="form-label">Exp. Month:</label>
+            <label className="form-label">ماه انقضا</label>
             <input
               className="form-input"
               type="num"
@@ -394,7 +394,7 @@ const BankCardPayment = () => {
               />
           </div>
           <div className="form-group" style={{ marginBottom: 0 }}>
-            <label className="form-label">Exp. Year:</label>
+            <label className="form-label">سال انقضا</label>
             <input
               className="form-input"
               type="num"
@@ -410,10 +410,10 @@ const BankCardPayment = () => {
       {/* ── Action Buttons ── */}
       <div className="btn-row">
         <button className="btn-pay" type="button">
-          Confirm & Pay
+          تایید و پرداخت
         </button>
         <button className="btn-cancel" type="button">
-          Cancel
+          لغو
         </button>
       </div>
 
@@ -421,15 +421,15 @@ const BankCardPayment = () => {
       <div className="notice-box">
         <div className="notice-item">
           <span className="notice-star">*</span>
-          <span>All fields are required.</span>
+          <span>پر کردن همه فیلد ها الزامی است</span>
         </div>
         <div className="notice-item">
           <span className="notice-star">*</span>
-          <span>To prevent your card from being blocked, enter your information carefully.</span>
+          <span>برای جلوگیری از مسدود شدن کارت خود، اطلاعاتتان را با دقت وارد کنید</span>
         </div>
         <div className="notice-item">
           <span className="notice-star">*</span>
-          <span>All information is securely stored by the payment system.</span>
+          <span>تمام اطلاعات به‌صورت ایمن توسط سیستم پرداخت ذخیره می‌شود</span>
         </div>
       </div>
 

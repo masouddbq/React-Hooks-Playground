@@ -4,7 +4,11 @@
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily : {
+          pinar : ['pinar']
+        },
+      },
     },
     plugins: [],
   }

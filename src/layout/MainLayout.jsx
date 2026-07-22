@@ -8,7 +8,7 @@ const MainLayout = () => {
   const hideNav = matches.some((match) => match.handle?.hideNav);
 
   return (
-    <div>
+    <div dir="rtl">
       <ScrollRestoration />
       {!hideNav && <Navbar />}
       <Outlet />

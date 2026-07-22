@@ -8,15 +8,14 @@ const HomePage = () => {
   console.log(auth);
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-6  font-sans">
+    <div className="min-h-[80vh] flex items-center justify-center px-6 ">
       <div className="max-w-3xl w-full text-center">
         {/* Intro heading */}
-        <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight mb-3">
-          A hands-on playground for React Hooks
+        <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight mb-3">
+          یک زمین بازی متفاوت برای یاد گیری ری اکت
         </h1>
         <p className="text-sm md:text-base text-slate-500 leading-relaxed mb-6">
-          Explore real, working examples of React hooks and learn how each one
-          behaves in practice.
+        نمونه‌های واقعی و کاربردی از هوک‌های ری‌اکت  را بررسی کنید و با نحوه عملکرد هر یک در عمل آشنا شوید
         </p>
 
         {/* Badge */}
@@ -28,7 +27,7 @@ const HomePage = () => {
           to="/projects"
           className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white no-underline px-7 py-3.5 rounded-xl text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-600/30 mb-10"
         >
-          Show Projects
+          پروژه ها
           <svg
             width="16"
             height="16"

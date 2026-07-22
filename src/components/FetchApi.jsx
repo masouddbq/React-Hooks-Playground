@@ -40,7 +40,7 @@ const FetchApi = () => {
       <div className="flex flex-col gap-4 p-6 bg-white rounded-2xl shadow-2xl w-72">
         {/* status */}
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-gray-500">status</span>
+          <span className="text-sm font-medium text-gray-500">وضعیت</span>
           <span
             className={`text-xs font-semibold px-3 py-1 rounded-full ${
               isLoading
@@ -50,7 +50,7 @@ const FetchApi = () => {
                   : "bg-green-50 text-green-500"
             }`}
           >
-            {isLoading ? "Please wait" : error ? "❗" : "✔"}
+            {isLoading ? "لطفا صبر کنید" : error ? "❗" : "✔"}
           </span>
         </div>
 
@@ -59,12 +59,12 @@ const FetchApi = () => {
           {isLoading ? (
             <div className="flex items-center gap-2 text-gray-400">
               <div className="w-4 h-4 border-2 border-gray-300 border-t-indigo-500 rounded-full animate-spin" />
-              در حال Get Data...
+              در حال دریافت داده ها
             </div>
           ) : error ? (
             <span className="text-red-400">{error}</span>
         ) : data.length === 0 ? (
-            <span className="text-gray-400">Nope yet...</span>
+            <span className="text-gray-400">هنوز هیچی نیومده</span>
           ) : (
             data.splice(0,4).map((job) => (
               <div key={job.id}>
@@ -82,7 +82,7 @@ const FetchApi = () => {
           disabled={isLoading}
           className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm font-semibold transition-all duration-150"
         >
-          Get Data
+          دریافت داده ها
         </button>
 
         {/* دکمه Reset */}
@@ -90,7 +90,7 @@ const FetchApi = () => {
           onClick={handleReset}
           className="w-full py-2 rounded-xl border border-gray-200 hover:bg-gray-50 active:scale-95 text-gray-500 text-sm font-medium transition-all duration-150"
         >
-          Reset
+          تازه سازی
         </button>
       </div>
     </div>

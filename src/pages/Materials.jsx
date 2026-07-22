@@ -15,14 +15,14 @@ const Materials = () => {
   const [isListShow, setIsListShow] = useState(false);
 
   const materials = [
-    { key: "cleanup", title: "Clean-up", Component: Cleanup },
-    { key: "privateRoute", title: "PrivateRoute", Component: PrivateRoute },
+    { key: "cleanup", title: "کلین آپ", Component: Cleanup },
+    { key: "privateRoute", title: "روت خصوصی", Component: PrivateRoute },
     {
       key: "scrollRestore",
-      title: "ScrollRestoration",
+      title: "بازگشت اسکرول",
       Component: ScrollRestore,
     },
-    { key: "activity", title: "Activity", Component: ActivityDemo },
+    { key: "activity", title: "اکتیویتی", Component: ActivityDemo },
   ];
 
   // کامپوننت فعال

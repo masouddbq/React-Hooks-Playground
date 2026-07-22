@@ -20,9 +20,9 @@ const Navbar = () => {
           {/* Links - Desktop */}
           <div className="hidden md:flex items-center gap-1">
             {[
-              { label: "Projects", href: "/projects" },
-              { label: "Materials", href: "/materials" },
-              { label: "About", href: "/about" },
+              { label: "پروژه ها", href: "/projects" },
+              { label: "ابزار", href: "/materials" },
+              { label: "درباره هوک ها", href: "/about" },
             ].map((item) => (
               <NavLink
                 key={item.href}
@@ -60,9 +60,9 @@ const Navbar = () => {
           <div className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
             <div className="max-w-6xl mx-auto px-6 py-3 flex flex-col gap-1">
               {[
-                { label: "Projects", href: "/projects" },
-                { label: "Materials", href: "/materials" },
-                { label: "About", href: "/about" },
+                { label: "پروژه ها", href: "/projects" },
+                { label: "ابزار", href: "/materials" },
+                { label: "درباره هوک ها", href: "/about" },
               ].map((item) => (
                 <NavLink
                   key={item.href}
