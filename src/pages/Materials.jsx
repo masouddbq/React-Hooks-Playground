@@ -1,6 +1,7 @@
 import React, { Activity, useState, lazy, Suspense } from "react";
 import Button from "../components/Button";
 import { RiExpandLeftRightFill } from "react-icons/ri";
+import Projects from "./Projects";
 
 // Lazy Load Components
 const Cleanup = lazy(() => import("../components/CleanUp"));
@@ -56,7 +57,7 @@ const Materials = () => {
               onClick={() => setIsListShow((prev) => !prev)}
               className={
                 isListShow
-                  ? "absolute md:hidden opacity-50 animate-bounce border-[1px] border-l-0 border-indigo-700 rounded-lg cursor-pointer text-indigo-800 text-2xl -right-6 top-1/2"
+                  ? "absolute md:hidden opacity-50 animate-bounce border-[1px] border-l-0 border-indigo-700 rounded-lg cursor-pointer text-indigo-800 text-2xl left-36 top-1/2"
                   : "absolute md:hidden bg-white/80 border-[1px] border-indigo-300 border-l-0 opacity-85 rounded-l-none rounded-lg cursor-pointer text-indigo-600 text-2xl -right-6 top-1/2"
               }
             />
