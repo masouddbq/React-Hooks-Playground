@@ -12,10 +12,10 @@ const Counter = () => {
     
     
     useEffect(() => {
-      setParams({
-        search : 'car'
-      })
-      const search = params.get('search')
+      // setParams({
+      //   search : 'car'
+      // })
+      // const search = params.get('search')
       // const filterProds = product.filter(prod => prod.title.includes(search))
     }, []);
 
